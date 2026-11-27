@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+app:
+  jwt:
+    secret: dGVhbWZsb3ctaHViLWRldi1zZWNyZXQta2V5LWNoYW5nZS1tZS0xMjM0NTY3ODkw
+    expiration-minutes: 60
+  cors:
+    allowed-origins: http://localhost:4200
+  upload-dir: target/test-uploads
+  seed:
+    admin-email: admin@teamflow.local
+    admin-password: Admin@123

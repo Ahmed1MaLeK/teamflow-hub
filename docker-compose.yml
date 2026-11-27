@@ -1,0 +1,14 @@
+# Optional: run MySQL in Docker instead of installing it.  docker compose up -d
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: teamflow-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: teamflow_hub
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+volumes:
+  mysql_data:
